@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Global Ltd | Premium Coffee, Fine Wine & Bespoke Tableware</title>
+    <title>Vertex Global Ltd | Premium Coffee • Fine Wine • Bespoke Tableware</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --primary-blue: #003087;
@@ -16,32 +17,18 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--dark);
             background: #fff;
         }
-        
-        header {
-            background: linear-gradient(rgba(0,48,135,0.92), rgba(0,48,135,0.92)), url('https://source.unsplash.com/random/1920x1080/?luxury-wine-coffee') center/cover;
-            color: white;
-            padding: 160px 0 100px;
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 3.2rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-        
+
+        /* 导航栏 + 汉堡菜单 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255,255,255,0.98);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             z-index: 1000;
         }
         
@@ -52,47 +39,99 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 85px;
+        }
+        
+        .logo {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
         }
         
         .nav-links a {
-            margin: 0 22px;
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
         
         .nav-links a:hover { color: var(--accent-blue); }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 85px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            z-index: 999;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 15px 5%;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Hero Section - 文字位置已向下调整，文案更丰富专业 */
+        header {
+            background: linear-gradient(rgba(0,48,135,0.92), rgba(0,48,135,0.92)), 
+                        url('https://source.unsplash.com/random/1920x1080/?luxury-wine-coffee') center/cover no-repeat;
+            color: white;
+            padding: 260px 5% 180px;   /* 加大顶部间距，让文字往下移 */
+            text-align: center;
+        }
         
         .hero h1 {
-            font-size: 4.2rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
+            font-size: 3.85rem;
+            margin-bottom: 28px;
+            line-height: 1.15;
+            font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.45rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
+            font-size: 1.38rem;
+            max-width: 960px;
+            margin: 0 auto 50px;
+            opacity: 0.95;
         }
-        
+
         .btn {
             background: var(--accent-blue);
             color: white;
-            padding: 16px 42px;
-            border-radius: 4px;
+            padding: 17px 48px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.4s;
+            display: inline-block;
         }
         
         .btn:hover {
             background: #005fa3;
-            transform: translateY(-4px);
+            transform: translateY(-5px);
         }
-        
+
+        /* Sections */
         .section {
             padding: 110px 5%;
             max-width: 1400px;
@@ -100,12 +139,12 @@
         }
         
         h2 {
-            font-size: 3rem;
+            font-size: 2.9rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             color: var(--primary-blue);
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -114,55 +153,82 @@
         
         .card {
             background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-            transition: transform 0.4s;
+            border-radius: 16px;
+            padding: 45px 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.09);
+            transition: all 0.4s;
         }
         
         .card:hover {
             transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
         }
         
         .card h3 {
             color: var(--accent-blue);
-            margin-bottom: 18px;
-            font-size: 1.75rem;
+            margin-bottom: 22px;
+            font-size: 1.78rem;
         }
-        
+
         .metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
             text-align: center;
-            margin: 60px 0;
         }
-        
-        .metric-item {
-            padding: 30px;
-            background: var(--light);
-            border-radius: 12px;
-        }
-        
-        .metric-number {
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--accent-blue);
+
+        /* Contact & Footer */
+        .contact-bar {
+            background: linear-gradient(135deg, var(--accent-blue), #005fa3);
+            color: white;
+            padding: 65px 5%;
+            text-align: center;
         }
         
         footer {
             background: var(--primary-blue);
-            color: white;
-            padding: 90px 5% 40px;
+            color: #ddd;
+            padding: 70px 5% 40px;
             text-align: center;
+            font-size: 0.95rem;
         }
-        
-        .contact-bar {
+
+        /* 返回顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
             background: var(--accent-blue);
             color: white;
-            padding: 35px;
-            text-align: center;
-            font-size: 1.35rem;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            z-index: 9999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3.3rem; }
+            h2 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            header { padding: 200px 5% 140px; }
+            .hero h1 { font-size: 2.75rem; }
+            .section { padding: 80px 5%; }
+            .grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.4rem; }
+            .btn { padding: 15px 38px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -171,7 +237,8 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">VERTEX GLOBAL</div>
+            <div class="logo">VERTEX GLOBAL LTD</div>
+            
             <div class="nav-links">
                 <a href="#coffee">Coffee</a>
                 <a href="#wine">Wine</a>
@@ -179,14 +246,28 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- 手机菜单 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#coffee">Premium Coffee</a>
+            <a href="#wine">Fine Wine</a>
+            <a href="#tableware">Bespoke Tableware</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="logo">VERTEX GLOBAL LTD</div>
-        <h1>Global Excellence in Premium Beverages<br>& Luxury Tableware</h1>
-        <p>Headquartered in Los Angeles • European Operations in Liverpool, UK<br>Direct sourcing of the world's finest coffee, wines, and bespoke tableware.</p>
+    <!-- Hero Section - 文字已向下调整，文案更丰富专业 -->
+    <header>
+        <h1>Global Excellence in<br>Premium Beverages & Luxury Tableware</h1>
+        <p>Headquartered in Los Angeles, California with European operations in Liverpool, United Kingdom.<br>
+           We specialize in the direct import and export of the world's finest specialty coffee, exceptional fine wines, 
+           and fully customized luxury tableware and glassware for the hospitality industry and discerning private clients.</p>
         <a href="#contact" class="btn">Request a Quote or Consultation</a>
     </header>
 
@@ -204,7 +285,7 @@
             </div>
             <div class="metric-item">
                 <div class="metric-number">100,000+</div>
-                <p>Happy Hospitality Clients</p>
+                <p>Happy Clients Worldwide</p>
             </div>
             <div class="metric-item">
                 <div class="metric-number">98%</div>
@@ -213,59 +294,59 @@
         </div>
     </div>
 
-    <!-- Coffee Section -->
+    <!-- Coffee -->
     <div id="coffee" class="section">
-        <h2>Premium Coffee from Renowned Origins</h2>
+        <h2>Premium Coffee from World-Renowned Origins</h2>
         <div class="grid">
             <div class="card">
-                <h3>Ethiopia & East Africa</h3>
-                <p>Yirgacheffe, Sidamo, and Guji regions offer bright acidity with floral, berry, and citrus notes. Natural and washed processing methods bring out unique terroir.</p>
+                <h3>East Africa</h3>
+                <p>Ethiopia (Yirgacheffe, Sidamo, Guji) — bright acidity with distinctive floral, blueberry and citrus notes. Kenya AA — bold blackcurrant and wine-like complexity.</p>
             </div>
             <div class="card">
-                <h3>Colombia & Latin America</h3>
-                <p>Balanced, sweet profiles from Huila and Antioquia with caramel, nutty, and chocolate undertones. Shade-grown and sustainable farms.</p>
+                <h3>Latin America</h3>
+                <p>Colombia (Huila, Antioquia), Guatemala (Antigua), Costa Rica (Tarrazú) — perfectly balanced profiles with caramel sweetness, nutty undertones and vibrant acidity.</p>
             </div>
             <div class="card">
                 <h3>Brazil & Indonesia</h3>
-                <p>Smooth, full-bodied coffees from Minas Gerais and Sumatra Mandheling, ideal for espresso blends and daily consumption.</p>
+                <p>Brazil (Minas Gerais) offers smooth chocolate and hazelnut notes. Sumatra Mandheling delivers full body with earthy, spicy and herbal characteristics.</p>
             </div>
         </div>
     </div>
 
-    <!-- Wine Section -->
+    <!-- Wine -->
     <div id="wine" class="section" style="background: #f8f9fa;">
         <h2>Fine Wines from Iconic Regions</h2>
         <div class="grid">
             <div class="card">
-                <h3>France & Italy</h3>
-                <p>Bordeaux Classified Growths, Burgundy Grand Crus, Tuscany Brunello, Piedmont Barolo — age-worthy reds and elegant whites.</p>
+                <h3>Old World Classics</h3>
+                <p>Bordeaux Classified Growths, Burgundy Grand Crus, Brunello di Montalcino, Barolo, Super Tuscans, and Rioja Gran Reserva — exceptional age-worthy wines.</p>
             </div>
             <div class="card">
-                <h3>Spain & New World</h3>
-                <p>Rioja Reserva, Ribera del Duero, Napa Valley Cabernet, Australian Shiraz, New Zealand Pinot Noir, and Argentine Malbec.</p>
+                <h3>New World Highlights</h3>
+                <p>Argentine Malbec from Mendoza & Uco Valley, Australian Barossa Shiraz, Napa Valley Cabernet Sauvignon, New Zealand Central Otago Pinot Noir, and Marlborough Sauvignon Blanc.</p>
             </div>
             <div class="card">
-                <h3>Specialty Selections</h3>
-                <p>Champagne, Super Tuscans, cult wines, and organic/biodynamic options for restaurants and private collectors.</p>
+                <h3>Specialty Collections</h3>
+                <p>Prestigious Champagne, organic & biodynamic selections, cult wines, and rare vintages carefully curated for fine dining establishments and private collectors.</p>
             </div>
         </div>
     </div>
 
-    <!-- Tableware Section -->
+    <!-- Tableware -->
     <div id="tableware" class="section">
-        <h2>Bespoke Tableware & Glassware</h2>
+        <h2>Bespoke Luxury Tableware & Glassware</h2>
         <div class="grid">
             <div class="card">
                 <h3>Custom Porcelain & Ceramic</h3>
-                <p>Fine bone china with custom logos, monograms, gold banding, and unique glazes for hotels and fine dining.</p>
+                <p>Premium bone china and porcelain featuring custom logos, monograms, intricate patterns, gold and platinum banding for 5-star hotels and fine dining restaurants.</p>
             </div>
             <div class="card">
-                <h3>Crystal & Barware</h3>
-                <p>Hand-blown crystal stemware, decanters, and personalized engraving for luxury retail and private estates.</p>
+                <h3>Crystal & Stemware</h3>
+                <p>Hand-blown crystal glasses, decanters, and barware with deep etching, custom engraving, and personalized designs.</p>
             </div>
             <div class="card">
                 <h3>Sterling Silver & Flatware</h3>
-                <p>Exquisite cutlery with custom designs, perfect for corporate gifting and high-end hospitality.</p>
+                <p>Exquisite sterling silver cutlery and serving pieces with custom monogramming and elegant designs for luxury hospitality and private estates.</p>
             </div>
         </div>
     </div>
@@ -273,15 +354,11 @@
     <!-- About -->
     <div id="about" class="section" style="background: #f8f9fa;">
         <h2>About Vertex Global Ltd</h2>
-        <p style="max-width: 900px; margin: 0 auto 50px; font-size: 1.25rem; text-align: center;">
-            Headquartered in Los Angeles, California with European operations in Liverpool, United Kingdom, 
-            Vertex Global Ltd specializes in the import and export of premium coffee, fine wines, 
-            and fully customized luxury tableware and glassware.
-        </p>
-        <p style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; text-align: center;">
-            We source directly from the world's most renowned estates and manufacturers, 
-            ensuring authenticity, sustainability, and exceptional quality. Our bespoke services allow clients 
-            to create exclusive, personalized collections tailored to their exact specifications.
+        <p style="max-width: 960px; margin: 0 auto 50px; font-size: 1.28rem; text-align: center;">
+            With headquarters in Los Angeles and European operations in Liverpool, Vertex Global Ltd is a trusted international trading partner 
+            specializing in the sourcing, import and export of premium specialty coffee, fine wines from renowned estates, 
+            and fully bespoke luxury tableware and glassware. We are committed to delivering exceptional quality, authenticity, 
+            and personalized service to hospitality groups, distributors and private clients worldwide.
         </p>
     </div>
 
@@ -290,15 +367,46 @@
         <p><strong>Vertex Global Ltd</strong></p>
         <p>Head Office: Los Angeles, California, USA</p>
         <p>European Branch: Liverpool, United Kingdom</p>
-        <p style="margin-top: 20px; font-size: 1.5rem;">
-            Phone (UK): <strong>+44 7537 168400</strong> &nbsp; | &nbsp; <strong>+44 7537 180058</strong>
+        <p style="margin: 25px 0; font-size: 1.45rem;">
+            📞 UK: <strong>+44 7537 168400</strong> &nbsp;&nbsp; | &nbsp;&nbsp; <strong>+44 7537 180058</strong>
         </p>
-        <p style="margin-top: 25px;">We welcome inquiries from hospitality groups, distributors, retailers, and private clients worldwide.</p>
+        <p>We welcome inquiries from hotels, restaurants, distributors, retailers, and private collectors worldwide.</p>
     </div>
 
     <footer>
-        <p>© 2026 Vertex Global Ltd. All Rights Reserved. | International Trade in Premium Coffee, Wine & Luxury Goods</p>
+        <p>© 2026 Vertex Global Ltd. All Rights Reserved. | International Import & Export • Premium Coffee • Fine Wine • Luxury Tableware</p>
     </footer>
 
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.style.display = 'none');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 600 ? 'block' : 'none';
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 </body>
 </html>
