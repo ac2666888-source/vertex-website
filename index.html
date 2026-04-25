@@ -22,7 +22,6 @@
             background: #fff;
         }
 
-        /* 导航栏 + 汉堡菜单 */
         nav {
             position: fixed;
             top: 0;
@@ -91,12 +90,11 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* Hero Section - 文字位置已向下调整，文案更丰富专业 */
         header {
             background: linear-gradient(rgba(0,48,135,0.92), rgba(0,48,135,0.92)), 
                         url('https://source.unsplash.com/random/1920x1080/?luxury-wine-coffee') center/cover no-repeat;
             color: white;
-            padding: 260px 5% 180px;   /* 加大顶部间距，让文字往下移 */
+            padding: 260px 5% 180px;
             text-align: center;
         }
         
@@ -124,6 +122,7 @@
             font-weight: 600;
             transition: all 0.4s;
             display: inline-block;
+            margin-top: 35px;
         }
         
         .btn:hover {
@@ -131,7 +130,6 @@
             transform: translateY(-5px);
         }
 
-        /* Sections */
         .section {
             padding: 110px 5%;
             max-width: 1400px;
@@ -177,7 +175,6 @@
             text-align: center;
         }
 
-        /* Contact & Footer */
         .contact-bar {
             background: linear-gradient(135deg, var(--accent-blue), #005fa3);
             color: white;
@@ -193,7 +190,6 @@
             font-size: 0.95rem;
         }
 
-        /* 返回顶部按钮 */
         #backToTop {
             position: fixed;
             bottom: 30px;
@@ -211,7 +207,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* 响应式 */
         @media (max-width: 992px) {
             .hero h1 { font-size: 3.3rem; }
             h2 { font-size: 2.5rem; }
@@ -228,7 +223,7 @@
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 2.4rem; }
-            .btn { padding: 15px 38px; font-size: 1.1rem; }
+            .btn { padding: 15px 38px; font-size: 1.1rem; margin-top: 25px; }
         }
     </style>
 </head>
@@ -238,7 +233,6 @@
     <nav>
         <div class="nav-container">
             <div class="logo">VERTEX GLOBAL LTD</div>
-            
             <div class="nav-links">
                 <a href="#coffee">Coffee</a>
                 <a href="#wine">Wine</a>
@@ -246,13 +240,9 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
-            
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
         </div>
 
-        <!-- 手机菜单 -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#coffee">Premium Coffee</a>
             <a href="#wine">Fine Wine</a>
@@ -262,10 +252,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section - 文字已向下调整，文案更丰富专业 -->
+    <!-- Hero -->
     <header>
         <h1>Global Excellence in<br>Premium Beverages & Luxury Tableware</h1>
-        <p>Headquartered in Los Angeles, California with European operations in Liverpool, United Kingdom.<br>
+        <p>Headquartered in Los Angeles, California with European operations in London, United Kingdom.<br>
            We specialize in the direct import and export of the world's finest specialty coffee, exceptional fine wines, 
            and fully customized luxury tableware and glassware for the hospitality industry and discerning private clients.</p>
         <a href="#contact" class="btn">Request a Quote or Consultation</a>
@@ -275,64 +265,76 @@
     <div class="section" style="background: #f8f9fa;">
         <h2>Why Choose Vertex Global Ltd</h2>
         <div class="metrics">
-            <div class="metric-item">
-                <div class="metric-number">15+</div>
-                <p>Years in International Trade</p>
-            </div>
-            <div class="metric-item">
-                <div class="metric-number">120+</div>
-                <p>Countries Served</p>
-            </div>
-            <div class="metric-item">
-                <div class="metric-number">100,000+</div>
-                <p>Happy Clients Worldwide</p>
-            </div>
-            <div class="metric-item">
-                <div class="metric-number">98%</div>
-                <p>Client Retention Rate</p>
-            </div>
+            <div class="metric-item"><div class="metric-number">15+</div><p>Years in International Trade</p></div>
+            <div class="metric-item"><div class="metric-number">120+</div><p>Countries Served</p></div>
+            <div class="metric-item"><div class="metric-number">100,000+</div><p>Happy Clients Worldwide</p></div>
+            <div class="metric-item"><div class="metric-number">98%</div><p>Client Retention Rate</p></div>
         </div>
     </div>
 
-    <!-- Coffee -->
+    <!-- Coffee (6个) -->
     <div id="coffee" class="section">
         <h2>Premium Coffee from World-Renowned Origins</h2>
         <div class="grid">
             <div class="card">
                 <h3>East Africa</h3>
-                <p>Ethiopia (Yirgacheffe, Sidamo, Guji) — bright acidity with distinctive floral, blueberry and citrus notes. Kenya AA — bold blackcurrant and wine-like complexity.</p>
+                <p>Ethiopia (Yirgacheffe, Sidamo, Guji) and Kenya AA — renowned for bright acidity, complex floral, blueberry, and citrus aromas.</p>
             </div>
             <div class="card">
                 <h3>Latin America</h3>
-                <p>Colombia (Huila, Antioquia), Guatemala (Antigua), Costa Rica (Tarrazú) — perfectly balanced profiles with caramel sweetness, nutty undertones and vibrant acidity.</p>
+                <p>Colombia (Huila, Antioquia), Guatemala (Antigua), Costa Rica (Tarrazú) — balanced sweetness with caramel, nutty and chocolate notes.</p>
             </div>
             <div class="card">
-                <h3>Brazil & Indonesia</h3>
-                <p>Brazil (Minas Gerais) offers smooth chocolate and hazelnut notes. Sumatra Mandheling delivers full body with earthy, spicy and herbal characteristics.</p>
+                <h3>Brazil & South America</h3>
+                <p>Brazil (Minas Gerais, Santos) offers smooth chocolate and hazelnut profiles. Bolivia and Peru provide unique high-altitude character.</p>
+            </div>
+            <div class="card">
+                <h3>Asia Pacific</h3>
+                <p>Sumatra Mandheling & Gayo (Indonesia), Vietnam, and Papua New Guinea — full-bodied, earthy and spicy with distinctive herbal notes.</p>
+            </div>
+            <div class="card">
+                <h3>Jamaica & Hawaii</h3>
+                <p>Jamaica Blue Mountain — world-famous mild, smooth and balanced. Hawaii Kona offers rare and luxurious flavor profiles.</p>
+            </div>
+            <div class="card">
+                <h3>Specialty Micro-Lots</h3>
+                <p>Geisha (Panama), rare Ethiopian heirloom varieties, and limited competition-winning coffees for the most discerning connoisseurs.</p>
             </div>
         </div>
     </div>
 
-    <!-- Wine -->
+    <!-- Wine (6个) -->
     <div id="wine" class="section" style="background: #f8f9fa;">
         <h2>Fine Wines from Iconic Regions</h2>
         <div class="grid">
             <div class="card">
-                <h3>Old World Classics</h3>
-                <p>Bordeaux Classified Growths, Burgundy Grand Crus, Brunello di Montalcino, Barolo, Super Tuscans, and Rioja Gran Reserva — exceptional age-worthy wines.</p>
+                <h3>France</h3>
+                <p>Bordeaux Classified Growths, Burgundy Grand Cru, Rhône Valley, Champagne, and Loire Valley — the benchmark of elegance and complexity.</p>
             </div>
             <div class="card">
-                <h3>New World Highlights</h3>
-                <p>Argentine Malbec from Mendoza & Uco Valley, Australian Barossa Shiraz, Napa Valley Cabernet Sauvignon, New Zealand Central Otago Pinot Noir, and Marlborough Sauvignon Blanc.</p>
+                <h3>Italy</h3>
+                <p>Tuscany (Brunello, Chianti, Super Tuscans), Piedmont (Barolo, Barbaresco), Veneto (Amarone), and Sicily — passionate and diverse.</p>
             </div>
             <div class="card">
-                <h3>Specialty Collections</h3>
-                <p>Prestigious Champagne, organic & biodynamic selections, cult wines, and rare vintages carefully curated for fine dining establishments and private collectors.</p>
+                <h3>Spain & Portugal</h3>
+                <p>Rioja, Ribera del Duero, Priorat, and Portuguese Port & Douro Valley — rich, structured wines with exceptional aging potential.</p>
+            </div>
+            <div class="card">
+                <h3>New World Classics</h3>
+                <p>Argentina Malbec (Mendoza & Uco Valley), Australian Shiraz & Cabernet, Napa Valley Cabernet Sauvignon, and New Zealand Pinot Noir.</p>
+            </div>
+            <div class="card">
+                <h3>Emerging Regions</h3>
+                <p>South Africa (Stellenbosch), Chile (Maipo & Colchagua), and Lebanon (Bekaa Valley) — offering outstanding quality and value.</p>
+            </div>
+            <div class="card">
+                <h3>Specialty & Prestige</h3>
+                <p>Prestigious Champagne houses, organic & biodynamic wines, cult wines, sweet wines from Sauternes and rare vintages for collectors.</p>
             </div>
         </div>
     </div>
 
-    <!-- Tableware -->
+    <!-- Tableware - 已增加到6个分类 -->
     <div id="tableware" class="section">
         <h2>Bespoke Luxury Tableware & Glassware</h2>
         <div class="grid">
@@ -348,17 +350,32 @@
                 <h3>Sterling Silver & Flatware</h3>
                 <p>Exquisite sterling silver cutlery and serving pieces with custom monogramming and elegant designs for luxury hospitality and private estates.</p>
             </div>
+            <div class="card">
+                <h3>Luxury Glassware & Barware</h3>
+                <p>High-end tumblers, wine glasses, cocktail sets, and bar accessories with custom etching and premium finishes.</p>
+            </div>
+            <div class="card">
+                <h3>Decorative Serving Pieces</h3>
+                <p>Handcrafted platters, bowls, chargers, and centerpieces in porcelain, silver, and exotic materials for elegant presentations.</p>
+            </div>
+            <div class="card">
+                <h3>Private Label & Exclusive Collections</h3>
+                <p>Complete branded tableware collections designed exclusively for luxury hotels, resorts, and high-end restaurants worldwide.</p>
+            </div>
         </div>
     </div>
 
     <!-- About -->
     <div id="about" class="section" style="background: #f8f9fa;">
         <h2>About Vertex Global Ltd</h2>
-        <p style="max-width: 960px; margin: 0 auto 50px; font-size: 1.28rem; text-align: center;">
-            With headquarters in Los Angeles and European operations in Liverpool, Vertex Global Ltd is a trusted international trading partner 
-            specializing in the sourcing, import and export of premium specialty coffee, fine wines from renowned estates, 
-            and fully bespoke luxury tableware and glassware. We are committed to delivering exceptional quality, authenticity, 
-            and personalized service to hospitality groups, distributors and private clients worldwide.
+        <p style="max-width: 980px; margin: 0 auto 50px; font-size: 1.28rem; text-align: center;">
+            Founded in 2011 with a vision to connect the world's finest producers with premium markets, Vertex Global Ltd has grown into a trusted international trading company. 
+            With headquarters in Los Angeles and European operations in London, we have spent over 15 years building direct relationships with renowned estates, 
+            cooperatives, and master craftsmen across six continents.
+        </p>
+        <p style="max-width: 980px; margin: 0 auto 50px; font-size: 1.25rem; text-align: center;">
+            Our mission is to deliver exceptional quality, authenticity, and personalized service. Whether sourcing rare coffee micro-lots from Ethiopia, 
+            securing allocations of prestigious Bordeaux wines, or creating bespoke tableware collections for luxury hotels, we take pride in exceeding expectations.
         </p>
     </div>
 
@@ -366,7 +383,7 @@
     <div id="contact" class="contact-bar">
         <p><strong>Vertex Global Ltd</strong></p>
         <p>Head Office: Los Angeles, California, USA</p>
-        <p>European Branch: Liverpool, United Kingdom</p>
+        <p>European Branch: London, United Kingdom</p>
         <p style="margin: 25px 0; font-size: 1.45rem;">
             📞 UK: <strong>+44 7537 168400</strong> &nbsp;&nbsp; | &nbsp;&nbsp; <strong>+44 7537 180058</strong>
         </p>
@@ -377,7 +394,6 @@
         <p>© 2026 Vertex Global Ltd. All Rights Reserved. | International Import & Export • Premium Coffee • Fine Wine • Luxury Tableware</p>
     </footer>
 
-    <!-- 返回顶部按钮 -->
     <button id="backToTop" title="Back to Top">↑</button>
 
     <script>
